@@ -1,0 +1,110 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Master.vb" Inherits="NTXJackrabbits2026.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en" class="bg-paper">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> | North Texas Jackrabbits Track Club</title>
+    <meta name="description" content="North Texas Jackrabbits Track Club - a select, family-friendly youth track and field club in Prosper, TX. Home of National Champions and All-Americans." />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!-- Google Fonts: Oswald (display) + Open Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Site styles -->
+    <link href="<%: ResolveUrl("~/Content/Site.css") %>?v=2" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Top utility bar -->
+        <div class="jr-topbar">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center py-2 gap-2">
+                <span class="d-none d-md-inline">North Texas Jackrabbits Track Club &middot; Prosper, TX</span>
+                <span>
+                    <a href="https://www.jarvisregister.com/default.aspx?org=ntxjackrabbits" target="_blank" rel="noopener">Register</a>
+                    <span class="mx-1 text-white-50">|</span>
+                    <a href="mailto:info@ntxjackrabbits.com">Email Us</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Main navigation -->
+        <nav class="navbar navbar-expand-lg jr-nav sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="<%: ResolveUrl("~/Default.aspx") %>">
+                    <span class="jr-brand-mark">JR</span>
+                    <span>North Texas Jackrabbits</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#jrNavbar"
+                        aria-controls="jrNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="jrNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Default.aspx") %>">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/About.aspx") %>">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Family.aspx") %>">We Are Family</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Faqs.aspx") %>">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Results.aspx") %>">Results</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Coaches.aspx") %>">Coaches</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<%: ResolveUrl("~/Gallery.aspx") %>">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.jarvisregister.com/default.aspx?org=ntxjackrabbits" target="_blank" rel="noopener">My Account / Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page content -->
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+
+        <!-- Footer -->
+        <footer class="jr-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <h4>Donate</h4>
+                        <p>We are thankful for the support of our sponsors. The Jackrabbits are a 501(c)(3) non-profit &mdash; your tax-exempt donation helps keep our athletes competing. Thank you and God bless!</p>
+                        <a class="btn btn-jr btn-sm" href="mailto:info@ntxjackrabbits.com?subject=Donation">Make a Donation</a>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Contact Us</h4>
+                        <p class="mb-1"><strong>Sheila Stoutmire</strong><br />North Texas Jackrabbits Track Club</p>
+                        <p class="mb-1">P.O. Box 25<br />Prosper, TX 75078</p>
+                        <p class="mb-1">Fax: 972.548.0485</p>
+                        <p><a href="mailto:info@ntxjackrabbits.com">Email Us</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Follow Us</h4>
+                        <ul class="jr-list-clean">
+                            <li>Twitter: <a href="https://twitter.com/NTX_Jackrabbits" rel="noopener" target="_blank">@NTX_Jackrabbits</a></li>
+                            <li>Instagram: <a href="https://instagram.com/NTXJackrabbitstrack_" rel="noopener" target="_blank">@NTXJackrabbitstrack_</a></li>
+                            <li>Facebook: Prosper Jackrabbits Track Club</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jr-copy d-flex flex-wrap justify-content-between gap-2">
+                    <span><strong class="text-gold">NORTH TEXAS JACKRABBITS</strong> &copy; <%: DateTime.Now.Year %></span>
+                    <span><a href="<%: ResolveUrl("~/Default.aspx") %>">Privacy Policy</a></span>
+                </div>
+            </div>
+        </footer>
+
+        <button id="jrBackToTop" type="button" class="btn btn-jr" style="position:fixed;bottom:20px;right:20px;display:none;z-index:1050;" aria-label="Back to top">&uarr; Top</button>
+
+        <!-- jQuery + Bootstrap bundle -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="<%: ResolveUrl("~/Scripts/site.js") %>"></script>
+    </form>
+</body>
+</html>
